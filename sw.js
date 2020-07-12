@@ -4,6 +4,10 @@ self.addEventListener('push', function(e) {
         icon: "images/logo.png",
         vibrate: [100, 50, 100],
         tag: 'push_notify',
+        data: {
+            dateOfArrival: Date.now(),
+            primaryKey: '2'
+        },
         actions: [
             { action: "explore", title: "Explore this new world", 
             icon: "images/checkmark.png" },
