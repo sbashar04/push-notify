@@ -31,4 +31,4 @@ self.addEventListener('notificationclick', function (event) {
     } else {
         notification.close();
     }
-}, false);
+});
