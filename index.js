@@ -1,7 +1,3 @@
-var campaignId = document.querySelector('#campaignId').value;
-var userIp = document.querySelector('#ipAddress').value;
-var userCountry = document.querySelector('#country').value;
-
 addEventListener('load', async () => {
     var sw = await navigator.serviceWorker.register('./sw.js');
 })
@@ -16,17 +12,8 @@ async function subscribe() {
         push.campaignId = campaignId;
         push.country = userCountry;
         push.userIp = userIp;
-        subscribeNotification(JSON.stringify(push));
+        console.log(JSON.stringify(push));
     } catch (e) {
         console.log("Permission denied");
     }
-}
-
-function subscribeNotification(body) {
-    fetch('https://www.taratarids.com/subscribe', {
-        method: 'post',
-        body: {content: body},
-    }).then(response => response.json()).then(function (data) {
-        console.log('Subscribed to server successfully. ' + JSON.stringify(data));
-    });
 }

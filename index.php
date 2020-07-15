@@ -8,12 +8,6 @@
 </head>
 
 <body>
-
-    <div class="hidden-data">
-        <input type="hidden" name="country" id="campaignId" value="<?php echo $_GET['cid'];?>">
-        <input type="hidden" name="ipAddress" id="ipAddress" value="<?php echo $_GET['ip'];?>">
-        <input type="hidden" name="country" id="country" value="<?php echo $_GET['country'];?>">
-    </div>
     <button onclick="subscribe()" type="button">
         Subscribe
     </button>
