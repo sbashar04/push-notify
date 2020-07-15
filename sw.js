@@ -1,8 +1,9 @@
 self.addEventListener('push', function(event) {
-    console.log(event);
+    var pData = event.data.json();
+    console.log(pData);
     const options = {
-        body: event.data.body,
-        icon: event.data.icon,
+        body: pData.body,
+        icon: pData.icon,
         vibrate: [100, 50, 100],
         tag: 'push_notify',
         data: {
@@ -10,9 +11,9 @@ self.addEventListener('push', function(event) {
             primaryKey: '2'
         },
         actions: [
-            { action: "explore", title: "Explore this new world", icon: event.data.positive_icon },
-            { action: "close", title: "Close", icon: event.data.negative_icon }
+            { action: "explore", title: "Explore this new world", icon: pData.positive_icon },
+            { action: "close", title: "Close", icon: pData.negative_icon }
         ]
     };
-    event.waitUntil(self.registration.showNotification(event.data.title, options));
+    event.waitUntil(self.registration.showNotification(pData.title, options));
 })
