@@ -9,11 +9,8 @@ async function subscribe() {
             userVisibleOnly: true,
             applicationServerKey: 'BJsoS02KjUIi17A5VpmSRWleNMZSe979eeiUOXiknrIJpHnQhErDTpIQpQe1sBV3Q3hU3YfQ4QRnm4YK2BU5ZGw'
         });
-        push.campaignId = campaignId;
-        push.country = userCountry;
-        push.userIp = userIp;
         console.log(JSON.stringify(push));
     } catch (e) {
-        console.log("Permission denied");
+        console.log("Permission denied" + e);
     }
 }
