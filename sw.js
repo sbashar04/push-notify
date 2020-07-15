@@ -22,6 +22,7 @@ self.addEventListener('push', function (event) {
 })
 
 self.addEventListener('notificationclick', function (event) {
+    console.log(event);
     var notification = event.notification;
     var action = event.action;
     if (action == 'see_web') {
